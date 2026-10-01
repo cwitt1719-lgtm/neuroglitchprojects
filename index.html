@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Neuro-Glitch Projects | Tools for neurodivergent families</title>
-  <meta name="description" content="Neuro-Glitch Projects builds simple tools for neurodivergent families. Budget by paycheck, chores, emergency cards, household binders, subscriptions, and gifts. Buy on Gumroad.">
+  <meta name="description" content="Neuro-Glitch Projects builds simple tools for neurodivergent families. Start with the Neuro-Life admin pack, then budget, chores, emergency cards, household binders, subscriptions, and gifts.">
   <link rel="canonical" href="https://neuroglitchprojects.com/">
   <style>
     :root { --bg:#070B12; --card:#101826; --line:#243044; --text:#F4F7FB; --muted:#A8B3C7; --cyan:#3CEFFF; --pink:#FF4FD8; --platinum:#E5E4E2; }
@@ -24,7 +24,9 @@
     details { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
     summary { cursor:pointer; list-style:none; }
     summary::-webkit-details-marker { display:none; }
-    summary h2 { margin:0 0 6px; font-size:20px; }
+    .row { display:flex; gap:12px; align-items:center; }
+    .logo { width:56px; height:56px; border-radius:10px; object-fit:cover; flex:none; }
+    summary h2 { margin:0 0 4px; font-size:20px; }
     .tag { color:var(--pink); font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
     .short { margin:0; color:var(--muted); }
     .more { color:var(--text); margin:14px 0; }
@@ -43,46 +45,47 @@
     <p class="lede">Tap a tool to read what it does. Buy buttons open Gumroad.</p>
     <div class="filters" id="filters">
       <button type="button" aria-pressed="true" data-filter="all">All</button>
+      <button type="button" aria-pressed="false" data-filter="pack">Pack</button>
       <button type="button" aria-pressed="false" data-filter="money">Money</button>
       <button type="button" aria-pressed="false" data-filter="kids">Kids</button>
       <button type="button" aria-pressed="false" data-filter="home">Home</button>
       <button type="button" aria-pressed="false" data-filter="people">People</button>
     </div>
     <section class="grid" id="tools">
-      <details data-cat="money" open>
-        <summary><div class="tag">Money</div><h2>Neuro-Budget</h2><p class="short">Ties each bill to the paycheck that pays it.</p></summary>
+      <details data-cat="pack" open>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/pz842hla2qg1oetayjm1w8wg1ogh" alt="Neuro-Life logo"><div><div class="tag">Pack</div><h2>Neuro-Life</h2><p class="short">Life admin pack. Four Neuro tools in one bundle.</p></div></div></summary>
+        <p class="more">The cover shows Neuro-House, Neuro-Gifts, Neuro-Chores, and Neuro-Leak together.</p>
+        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Life">Get it on Gumroad</a>
+      </details>
+      <details data-cat="money">
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/4f1w57p0qz4f07upc061h1r8h5vs" alt="Neuro-Budget logo"><div><div class="tag">Money</div><h2>Neuro-Budget</h2><p class="short">Ties each bill to the paycheck that pays it.</p></div></div></summary>
         <ul class="more"><li>Shows which check pays which bill.</li><li>Shows the amount safe to spend after those bills.</li><li>Runs on your phone. No spreadsheet.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Budget">Get it on Gumroad</a>
       </details>
       <details data-cat="money">
-        <summary><div class="tag">Money</div><h2>Neuro-Leak</h2><p class="short">Tracks subscriptions, yearly cost, and trial end dates.</p></summary>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/dvlcb23z529m9f3j0edwc26auai2" alt="Neuro-Leak logo"><div><div class="tag">Money</div><h2>Neuro-Leak</h2><p class="short">Tracks subscriptions, yearly cost, and trial end dates.</p></div></div></summary>
         <ul class="more"><li>Add a plan with price, due date, and billing cycle.</li><li>See the true yearly cost.</li><li>One tap shows due trials and payments.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Leak">Get it on Gumroad</a>
       </details>
       <details data-cat="kids">
-        <summary><div class="tag">Kids</div><h2>Neuro-Chores</h2><p class="short">Family chore board on your phone.</p></summary>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/4l3994mwqwpxtfb28vn9p73j8edq" alt="Neuro-Chores logo"><div><div class="tag">Kids</div><h2>Neuro-Chores</h2><p class="short">Family chore board on your phone.</p></div></div></summary>
         <ul class="more"><li>Add kids and assign chores.</li><li>Track points and redeem rewards.</li><li>Optional parent PIN. No monthly fee. No App Store account.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/wyvtxj">Get it on Gumroad</a>
       </details>
       <details data-cat="kids">
-        <summary><div class="tag">Kids</div><h2>Neuro-Binder</h2><p class="short">Emergency card for neurodivergent kids.</p></summary>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/6og0jlldp4dnjh72lflgfx3iqr0x" alt="Neuro-Binder logo"><div><div class="tag">Kids</div><h2>Neuro-Binder</h2><p class="short">Emergency card for neurodivergent kids.</p></div></div></summary>
         <ul class="more"><li>QR code with photo, contacts, allergies, and how to help.</li><li>A helper can scan it with no account.</li><li>The scanner cannot edit the card.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Binder">Get it on Gumroad</a>
       </details>
       <details data-cat="home">
-        <summary><div class="tag">Home</div><h2>Neuro-House</h2><p class="short">House binder for the details a visitor or worker needs.</p></summary>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/iwmu90jbgnsmwagj0cl7whs261rx" alt="Neuro-House logo"><div><div class="tag">Home</div><h2>Neuro-House</h2><p class="short">House binder for the details a visitor or worker needs.</p></div></div></summary>
         <ul class="more"><li>Keys, alarm codes, shutoffs, Wi-Fi, layout, and routines.</li><li>Share a QR code with a plumber, pet sitter, or guest.</li><li>Nothing is uploaded.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-House">Get it on Gumroad</a>
       </details>
       <details data-cat="people">
-        <summary><div class="tag">People</div><h2>Neuro-Gifts</h2><p class="short">Remembers birthdays, sizes, and gift ideas.</p></summary>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/kwus8bs1q4c2mndil8pm9bgonm32" alt="Neuro-Gifts logo"><div><div class="tag">People</div><h2>Neuro-Gifts</h2><p class="short">Remembers birthdays, sizes, and gift ideas.</p></div></div></summary>
         <ul class="more"><li>Stores the details you forget.</li><li>Tracks a gift from idea to given.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Gifts">Get it on Gumroad</a>
-      </details>
-      <details data-cat="home">
-        <summary><div class="tag">Home</div><h2>Neuro-Life</h2><p class="short">Life admin pack.</p></summary>
-        <p class="more">Full contents are on the Gumroad page.</p>
-        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Life">Get it on Gumroad</a>
       </details>
     </section>
   </main>
@@ -95,9 +98,7 @@
         buttons.forEach((item) => item.setAttribute("aria-pressed", "false"));
         button.setAttribute("aria-pressed", "true");
         const filter = button.dataset.filter;
-        cards.forEach((card) => {
-          card.hidden = filter !== "all" && card.dataset.cat !== filter;
-        });
+        cards.forEach((card) => { card.hidden = filter !== "all" && card.dataset.cat !== filter; });
       });
     });
   </script>
