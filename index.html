@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Neuro-Glitch Projects | Tools for neurodivergent families</title>
-  <meta name="description" content="Neuro-Glitch Projects builds simple tools for neurodivergent families. We are different, not less.">
+  <meta name="description" content="Neuro-Glitch Projects builds simple phone tools for neurodivergent families. Buy on Gumroad or request a custom app.">
   <link rel="canonical" href="https://neuroglitchprojects.com/">
   <style>
     :root { --bg:#07060f; --card:#120c1c; --line:#3a2458; --text:#F4F7FB; --muted:#c4b6d8; --cyan:#2ee7ff; --purple:#b44cff; }
@@ -13,16 +13,19 @@
     header, main, footer { width:min(880px, calc(100% - 32px)); margin:0 auto; }
     header { padding:18px 0 0; text-align:center; }
     .brand { width:min(220px, 62%); height:auto; display:block; margin:0 auto; }
-    nav { display:flex; justify-content:center; gap:18px; padding:8px 0 4px; flex-wrap:wrap; }
-    nav a { color:var(--cyan); text-decoration:none; font-size:14px; }
+    nav, .links { display:flex; justify-content:center; gap:14px; padding:8px 0 4px; flex-wrap:wrap; }
+    nav a, .links a { color:var(--cyan); text-decoration:none; font-size:14px; }
     h1 { font-size:clamp(30px, 7vw, 48px); line-height:1.05; margin:18px 0 12px; }
     h2 { margin:0 0 8px; }
     .lede, .note { color:var(--muted); font-size:18px; max-width:40rem; }
-    .filters { display:flex; gap:8px; flex-wrap:wrap; padding:22px 0 8px; }
+    .steps, .faq { display:grid; gap:10px; padding:8px 0 24px; }
+    .steps { grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); }
+    .step, details, form { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+    .step strong { display:block; color:var(--cyan); margin-bottom:4px; }
+    .filters { display:flex; gap:8px; flex-wrap:wrap; padding:8px 0; }
     .filters button { background:#140c22; color:#efe7ff; border:1px solid var(--line); border-radius:999px; padding:8px 12px; font:inherit; }
     .filters button[aria-pressed="true"] { background:var(--cyan); color:#071018; border-color:var(--cyan); font-weight:700; }
     .grid { display:grid; gap:14px; padding:14px 0 28px; }
-    details, form, .panel { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
     summary { cursor:pointer; list-style:none; }
     summary::-webkit-details-marker { display:none; }
     .row { display:flex; gap:12px; align-items:center; }
@@ -30,11 +33,11 @@
     summary h2 { margin:0 0 4px; font-size:20px; }
     .tag { color:var(--purple); font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
     .short { margin:0; color:var(--muted); }
-    .more { color:var(--text); margin:14px 0; }
+    .more { margin:14px 0; }
     .more li { margin:6px 0; }
     .buy, button.send { display:inline-block; background:linear-gradient(90deg, var(--purple), var(--cyan)); color:#071018; text-decoration:none; font-weight:700; border:0; border-radius:999px; padding:10px 14px; font:inherit; }
     label { display:block; margin:12px 0 6px; font-size:14px; }
-    input, textarea, select { width:100%; background:#0c0814; color:var(--text); border:1px solid var(--line); border-radius:10px; padding:10px; font:inherit; }
+    input, textarea { width:100%; background:#0c0814; color:var(--text); border:1px solid var(--line); border-radius:10px; padding:10px; font:inherit; }
     textarea { min-height:110px; }
     .custom { padding-bottom:28px; }
     footer { color:var(--muted); font-size:14px; padding-bottom:40px; text-align:center; }
@@ -47,12 +50,23 @@
     <nav>
       <a href="#tools">Tools</a>
       <a href="#custom">Custom app</a>
+      <a href="https://neuroprojects.gumroad.com">Gumroad</a>
       <a href="mailto:Neuroprojects.help@gmail.com">Email</a>
     </nav>
   </header>
   <main>
     <h1>Tools built for brains that do not run on default settings.</h1>
-    <p class="lede">Tap a tool to read what it does. Buy buttons open Gumroad.</p>
+    <p class="lede">Phone tools for neurodivergent families. Buy a finished tool, or ask for a custom app.</p>
+    <div class="links">
+      <a href="https://neuroprojects.gumroad.com">Gumroad store</a>
+      <a href="mailto:Neuroprojects.help@gmail.com">Neuroprojects.help@gmail.com</a>
+    </div>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><strong>1. Pick a tool</strong>Open a card and read what it does.</div>
+      <div class="step"><strong>2. Buy on Gumroad</strong>You pay there. No account on this site.</div>
+      <div class="step"><strong>3. Use it on your phone</strong>The product page tells you how to open it.</div>
+    </div>
     <div class="filters" id="filters">
       <button type="button" aria-pressed="true" data-filter="all">All</button>
       <button type="button" aria-pressed="false" data-filter="pack">Pack</button>
@@ -98,9 +112,15 @@
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Gifts">Get it on Gumroad</a>
       </details>
     </section>
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary><h2>Do I need an account here?</h2></summary><p>No. Buying happens on Gumroad.</p></details>
+      <details><summary><h2>Are these monthly fees?</h2></summary><p>No. These are one-time Gumroad products.</p></details>
+      <details><summary><h2>Can you build a different app?</h2></summary><p>Yes. Use the form below. I reply by email with an estimate.</p></details>
+    </div>
     <section class="custom" id="custom">
       <h2>Custom app estimate</h2>
-      <p class="note">Tell me what you want built. This form sends to Neuroprojects.help@gmail.com.</p>
+      <p class="note">This form sends to Neuroprojects.help@gmail.com.</p>
       <form action="https://formsubmit.co/Neuroprojects.help@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Custom app estimate request">
         <input type="hidden" name="_next" value="https://neuroglitchprojects.com/thanks.html">
@@ -125,7 +145,7 @@
     </section>
   </main>
   <footer>
-    <p>Email <a href="mailto:Neuroprojects.help@gmail.com">Neuroprojects.help@gmail.com</a></p>
+    <p><a href="https://neuroprojects.gumroad.com">Gumroad</a> · <a href="mailto:Neuroprojects.help@gmail.com">Neuroprojects.help@gmail.com</a></p>
     <p>Neuro-Glitch Projects · neuroglitchprojects.com</p>
   </footer>
   <script>
