@@ -6,112 +6,100 @@
   <title>Neuro-Glitch Projects | Tools for neurodivergent families</title>
   <meta name="description" content="Neuro-Glitch Projects builds simple tools for neurodivergent families. Budget by paycheck, chores, emergency cards, household binders, subscriptions, and gifts. Buy on Gumroad.">
   <link rel="canonical" href="https://neuroglitchprojects.com/">
-  <meta property="og:title" content="Neuro-Glitch Projects">
-  <meta property="og:description" content="Simple tools for neurodivergent families. Buy on Gumroad.">
-  <meta property="og:url" content="https://neuroglitchprojects.com/">
-  <meta property="og:type" content="website">
   <style>
-    :root {
-      --bg: #070B12;
-      --card: #101826;
-      --line: #243044;
-      --text: #F4F7FB;
-      --muted: #A8B3C7;
-      --cyan: #3CEFFF;
-      --pink: #FF4FD8;
-      --platinum: #E5E4E2;
-    }
+    :root { --bg:#070B12; --card:#101826; --line:#243044; --text:#F4F7FB; --muted:#A8B3C7; --cyan:#3CEFFF; --pink:#FF4FD8; --platinum:#E5E4E2; }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-    header, main, footer { width: min(880px, calc(100% - 32px)); margin: 0 auto; }
-    header { padding: 28px 0 8px; display: flex; justify-content: space-between; align-items: center; }
-    .mark { font-weight: 700; letter-spacing: 0.04em; }
-    .mark span { color: var(--cyan); }
-    nav a { color: var(--platinum); text-decoration: none; margin-left: 16px; font-size: 14px; }
-    .hero { padding: 36px 0 12px; }
-    h1 { font-size: clamp(32px, 8vw, 52px); line-height: 1.05; margin: 0 0 12px; }
-    .lede { color: var(--muted); font-size: 18px; max-width: 38rem; }
-    .grid { display: grid; gap: 14px; padding: 22px 0 40px; }
-    @media (min-width: 700px) { .grid { grid-template-columns: 1fr 1fr; } }
-    article {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 18px;
-    }
-    article h2 { margin: 0 0 6px; font-size: 20px; }
-    article p { margin: 0 0 14px; color: var(--muted); }
-    .buy {
-      display: inline-block;
-      background: var(--cyan);
-      color: #071018;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 10px 14px;
-    }
-    footer { color: var(--muted); font-size: 14px; padding-bottom: 40px; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
+    header, main, footer { width:min(880px, calc(100% - 32px)); margin:0 auto; }
+    header { padding:28px 0 8px; display:flex; justify-content:space-between; align-items:center; }
+    .mark { font-weight:700; letter-spacing:.04em; }
+    .mark span { color:var(--cyan); }
+    nav a { color:var(--platinum); text-decoration:none; margin-left:16px; font-size:14px; }
+    h1 { font-size:clamp(32px, 8vw, 52px); line-height:1.05; margin:28px 0 12px; }
+    .lede { color:var(--muted); font-size:18px; max-width:40rem; }
+    .filters { display:flex; gap:8px; flex-wrap:wrap; padding:22px 0 8px; }
+    .filters button { background:#0d1522; color:var(--platinum); border:1px solid var(--line); border-radius:999px; padding:8px 12px; font:inherit; }
+    .filters button[aria-pressed="true"] { background:var(--cyan); color:#071018; border-color:var(--cyan); font-weight:700; }
+    .grid { display:grid; gap:14px; padding:14px 0 40px; }
+    details { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
+    summary { cursor:pointer; list-style:none; }
+    summary::-webkit-details-marker { display:none; }
+    summary h2 { margin:0 0 6px; font-size:20px; }
+    .tag { color:var(--pink); font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+    .short { margin:0; color:var(--muted); }
+    .more { color:var(--text); margin:14px 0; }
+    .more li { margin:6px 0; }
+    .buy { display:inline-block; background:var(--cyan); color:#071018; text-decoration:none; font-weight:700; border-radius:999px; padding:10px 14px; }
+    footer { color:var(--muted); font-size:14px; padding-bottom:40px; }
   </style>
 </head>
 <body>
   <header>
     <div class="mark">NEURO<span>GLITCH</span></div>
-    <nav>
-      <a href="#tools">Tools</a>
-      <a href="https://neuroprojects.gumroad.com">Gumroad</a>
-    </nav>
+    <nav><a href="#tools">Tools</a><a href="https://neuroprojects.gumroad.com">Gumroad</a></nav>
   </header>
   <main>
-    <section class="hero">
-      <h1>Tools built for brains that do not run on default settings.</h1>
-      <p class="lede">Simple apps and binders for neurodivergent families. Each product is sold on Gumroad.</p>
-    </section>
+    <h1>Tools built for brains that do not run on default settings.</h1>
+    <p class="lede">Tap a tool to read what it does. Buy buttons open Gumroad.</p>
+    <div class="filters" id="filters">
+      <button type="button" aria-pressed="true" data-filter="all">All</button>
+      <button type="button" aria-pressed="false" data-filter="money">Money</button>
+      <button type="button" aria-pressed="false" data-filter="kids">Kids</button>
+      <button type="button" aria-pressed="false" data-filter="home">Home</button>
+      <button type="button" aria-pressed="false" data-filter="people">People</button>
+    </div>
     <section class="grid" id="tools">
-      <article>
-        <h2>Neuro-Budget</h2>
-        <p>Ties each bill to a paycheck, then shows what is safe to spend.</p>
+      <details data-cat="money" open>
+        <summary><div class="tag">Money</div><h2>Neuro-Budget</h2><p class="short">Ties each bill to the paycheck that pays it.</p></summary>
+        <ul class="more"><li>Shows which check pays which bill.</li><li>Shows the amount safe to spend after those bills.</li><li>Runs on your phone. No spreadsheet.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Budget">Get it on Gumroad</a>
-      </article>
-      <article>
-        <h2>Neuro-Chores</h2>
-        <p>Family chore board. Add kids, assign chores, track points, redeem rewards.</p>
-        <a class="buy" href="https://neuroprojects.gumroad.com/l/wyvtxj">Get it on Gumroad</a>
-      </article>
-      <article>
-        <h2>Neuro-Binder</h2>
-        <p>Emergency card for neurodivergent kids. QR code with contacts, allergies, and how to help.</p>
-        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Binder">Get it on Gumroad</a>
-      </article>
-      <article>
-        <h2>Neuro-House</h2>
-        <p>House binder for keys, shutoffs, Wi-Fi, and routines. Share a QR code. Nothing uploaded.</p>
-        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-House">Get it on Gumroad</a>
-      </article>
-      <article>
-        <h2>Neuro-Leak</h2>
-        <p>Tracks subscriptions, yearly cost, and trial end dates.</p>
+      </details>
+      <details data-cat="money">
+        <summary><div class="tag">Money</div><h2>Neuro-Leak</h2><p class="short">Tracks subscriptions, yearly cost, and trial end dates.</p></summary>
+        <ul class="more"><li>Add a plan with price, due date, and billing cycle.</li><li>See the true yearly cost.</li><li>One tap shows due trials and payments.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Leak">Get it on Gumroad</a>
-      </article>
-      <article>
-        <h2>Neuro-Gifts</h2>
-        <p>Remembers birthdays, sizes, and gift ideas, from idea to given.</p>
+      </details>
+      <details data-cat="kids">
+        <summary><div class="tag">Kids</div><h2>Neuro-Chores</h2><p class="short">Family chore board on your phone.</p></summary>
+        <ul class="more"><li>Add kids and assign chores.</li><li>Track points and redeem rewards.</li><li>Optional parent PIN. No monthly fee. No App Store account.</li></ul>
+        <a class="buy" href="https://neuroprojects.gumroad.com/l/wyvtxj">Get it on Gumroad</a>
+      </details>
+      <details data-cat="kids">
+        <summary><div class="tag">Kids</div><h2>Neuro-Binder</h2><p class="short">Emergency card for neurodivergent kids.</p></summary>
+        <ul class="more"><li>QR code with photo, contacts, allergies, and how to help.</li><li>A helper can scan it with no account.</li><li>The scanner cannot edit the card.</li></ul>
+        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Binder">Get it on Gumroad</a>
+      </details>
+      <details data-cat="home">
+        <summary><div class="tag">Home</div><h2>Neuro-House</h2><p class="short">House binder for the details a visitor or worker needs.</p></summary>
+        <ul class="more"><li>Keys, alarm codes, shutoffs, Wi-Fi, layout, and routines.</li><li>Share a QR code with a plumber, pet sitter, or guest.</li><li>Nothing is uploaded.</li></ul>
+        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-House">Get it on Gumroad</a>
+      </details>
+      <details data-cat="people">
+        <summary><div class="tag">People</div><h2>Neuro-Gifts</h2><p class="short">Remembers birthdays, sizes, and gift ideas.</p></summary>
+        <ul class="more"><li>Stores the details you forget.</li><li>Tracks a gift from idea to given.</li></ul>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Gifts">Get it on Gumroad</a>
-      </article>
-      <article>
-        <h2>Neuro-Life</h2>
-        <p>Life admin pack.</p>
+      </details>
+      <details data-cat="home">
+        <summary><div class="tag">Home</div><h2>Neuro-Life</h2><p class="short">Life admin pack.</p></summary>
+        <p class="more">Full contents are on the Gumroad page.</p>
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Life">Get it on Gumroad</a>
-      </article>
+      </details>
     </section>
   </main>
-  <footer>
-    <p>Neuro-Glitch Projects · neuroglitchprojects.com</p>
-  </footer>
+  <footer>Neuro-Glitch Projects · neuroglitchprojects.com</footer>
+  <script>
+    const buttons = document.querySelectorAll("#filters button");
+    const cards = document.querySelectorAll("#tools details");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((item) => item.setAttribute("aria-pressed", "false"));
+        button.setAttribute("aria-pressed", "true");
+        const filter = button.dataset.filter;
+        cards.forEach((card) => {
+          card.hidden = filter !== "all" && card.dataset.cat !== filter;
+        });
+      });
+    });
+  </script>
 </body>
 </html>
