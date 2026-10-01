@@ -7,21 +7,22 @@
   <meta name="description" content="Neuro-Glitch Projects builds simple tools for neurodivergent families. We are different, not less.">
   <link rel="canonical" href="https://neuroglitchprojects.com/">
   <style>
-    :root { --bg:#07060f; --card:#120c1c; --line:#3a2458; --text:#F4F7FB; --muted:#c4b6d8; --cyan:#2ee7ff; --purple:#b44cff; --pink:#d946ef; }
+    :root { --bg:#07060f; --card:#120c1c; --line:#3a2458; --text:#F4F7FB; --muted:#c4b6d8; --cyan:#2ee7ff; --purple:#b44cff; }
     * { box-sizing: border-box; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at top, #1a1030 0%, var(--bg) 42%); color:var(--text); line-height:1.5; }
     header, main, footer { width:min(880px, calc(100% - 32px)); margin:0 auto; }
     header { padding:18px 0 0; text-align:center; }
     .brand { width:min(220px, 62%); height:auto; display:block; margin:0 auto; }
-    nav { display:flex; justify-content:center; gap:18px; padding:8px 0 4px; }
+    nav { display:flex; justify-content:center; gap:18px; padding:8px 0 4px; flex-wrap:wrap; }
     nav a { color:var(--cyan); text-decoration:none; font-size:14px; }
     h1 { font-size:clamp(30px, 7vw, 48px); line-height:1.05; margin:18px 0 12px; }
-    .lede { color:var(--muted); font-size:18px; max-width:40rem; }
+    h2 { margin:0 0 8px; }
+    .lede, .note { color:var(--muted); font-size:18px; max-width:40rem; }
     .filters { display:flex; gap:8px; flex-wrap:wrap; padding:22px 0 8px; }
     .filters button { background:#140c22; color:#efe7ff; border:1px solid var(--line); border-radius:999px; padding:8px 12px; font:inherit; }
     .filters button[aria-pressed="true"] { background:var(--cyan); color:#071018; border-color:var(--cyan); font-weight:700; }
-    .grid { display:grid; gap:14px; padding:14px 0 40px; }
-    details { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
+    .grid { display:grid; gap:14px; padding:14px 0 28px; }
+    details, form, .panel { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; }
     summary { cursor:pointer; list-style:none; }
     summary::-webkit-details-marker { display:none; }
     .row { display:flex; gap:12px; align-items:center; }
@@ -31,14 +32,23 @@
     .short { margin:0; color:var(--muted); }
     .more { color:var(--text); margin:14px 0; }
     .more li { margin:6px 0; }
-    .buy { display:inline-block; background:linear-gradient(90deg, var(--purple), var(--cyan)); color:#071018; text-decoration:none; font-weight:700; border-radius:999px; padding:10px 14px; }
+    .buy, button.send { display:inline-block; background:linear-gradient(90deg, var(--purple), var(--cyan)); color:#071018; text-decoration:none; font-weight:700; border:0; border-radius:999px; padding:10px 14px; font:inherit; }
+    label { display:block; margin:12px 0 6px; font-size:14px; }
+    input, textarea, select { width:100%; background:#0c0814; color:var(--text); border:1px solid var(--line); border-radius:10px; padding:10px; font:inherit; }
+    textarea { min-height:110px; }
+    .custom { padding-bottom:28px; }
     footer { color:var(--muted); font-size:14px; padding-bottom:40px; text-align:center; }
+    footer a { color:var(--cyan); }
   </style>
 </head>
 <body>
   <header>
     <img class="brand" src="logo.jpg?v=10" alt="Neuro-Glitch. We are different, not less.">
-    <nav><a href="#tools">Tools</a><a href="https://neuroprojects.gumroad.com">Gumroad</a></nav>
+    <nav>
+      <a href="#tools">Tools</a>
+      <a href="#custom">Custom app</a>
+      <a href="mailto:Neuroprojects.help@gmail.com">Email</a>
+    </nav>
   </header>
   <main>
     <h1>Tools built for brains that do not run on default settings.</h1>
@@ -88,8 +98,36 @@
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Gifts">Get it on Gumroad</a>
       </details>
     </section>
+    <section class="custom" id="custom">
+      <h2>Custom app estimate</h2>
+      <p class="note">Tell me what you want built. This form sends to Neuroprojects.help@gmail.com.</p>
+      <form action="https://formsubmit.co/Neuroprojects.help@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Custom app estimate request">
+        <input type="hidden" name="_next" value="https://neuroglitchprojects.com/thanks.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" required>
+        <label for="app">What should the app do?</label>
+        <textarea id="app" name="app" required></textarea>
+        <label for="who">Who will use it?</label>
+        <input id="who" name="who">
+        <label for="must">Must-have features</label>
+        <textarea id="must" name="must"></textarea>
+        <label for="budget">Budget, if you have one</label>
+        <input id="budget" name="budget">
+        <label for="when">When do you need it?</label>
+        <input id="when" name="when">
+        <p><button class="send" type="submit">Send estimate request</button></p>
+      </form>
+    </section>
   </main>
-  <footer>Neuro-Glitch Projects · neuroglitchprojects.com</footer>
+  <footer>
+    <p>Email <a href="mailto:Neuroprojects.help@gmail.com">Neuroprojects.help@gmail.com</a></p>
+    <p>Neuro-Glitch Projects · neuroglitchprojects.com</p>
+  </footer>
   <script>
     const buttons = document.querySelectorAll("#filters button");
     const cards = document.querySelectorAll("#tools details");
