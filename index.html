@@ -18,11 +18,13 @@
     .links a { display:inline-flex; align-items:center; gap:8px; color:#071018; background:linear-gradient(90deg, var(--purple), var(--cyan)); text-decoration:none; font-size:17px; font-weight:700; border-radius:999px; padding:12px 16px; }
     .links svg { width:18px; height:18px; flex:none; }
     h1 { font-size:clamp(30px, 7vw, 48px); line-height:1.05; margin:18px 0 12px; }
-    h2 { margin:0 0 8px; }
+    h2 { margin:0 0 4px; font-size:20px; }
+    .price { color:var(--cyan); font-weight:700; }
     .lede, .note { color:var(--muted); font-size:18px; max-width:40rem; }
     .steps { display:flex; gap:8px; flex-wrap:wrap; padding:0 0 16px; color:var(--muted); font-size:13px; }
     .steps span { background:#140c22; border:1px solid var(--line); border-radius:999px; padding:6px 10px; }
     .about { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin:8px 0 24px; }
+    .about h2 { font-size:28px; }
     .about p { margin:0 0 12px; }
     .faq { display:grid; gap:10px; padding:8px 0 24px; }
     .filters { display:flex; gap:8px; flex-wrap:wrap; padding:8px 0; }
@@ -34,7 +36,6 @@
     summary::-webkit-details-marker { display:none; }
     .row { display:flex; gap:12px; align-items:center; }
     .logo { width:56px; height:56px; border-radius:10px; object-fit:cover; flex:none; }
-    summary h2 { margin:0 0 4px; font-size:20px; }
     .tag { color:var(--purple); font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
     .short { margin:0; color:var(--muted); }
     .more { margin:14px 0; }
@@ -44,6 +45,7 @@
     input, textarea { width:100%; background:#0c0814; color:var(--text); border:1px solid var(--line); border-radius:10px; padding:10px; font:inherit; }
     textarea { min-height:110px; }
     .custom { padding-bottom:28px; }
+    .custom h2, .faq + h2 { font-size:28px; }
     footer { color:var(--muted); font-size:14px; padding-bottom:40px; text-align:center; }
     footer a { color:var(--cyan); }
     .credit { margin-top:8px; font-size:13px; letter-spacing:.04em; }
@@ -80,9 +82,9 @@
     </div>
     <section class="grid" id="tools">
       <details data-cat="pack" open>
-        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/pz842hla2qg1oetayjm1w8wg1ogh" alt="Neuro-Life logo"><div><div class="tag">Pack</div><h2>Neuro-Life</h2><p class="short">Life admin pack. Four Neuro tools in one bundle.</p></div></div></summary>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/pz842hla2qg1oetayjm1w8wg1ogh" alt="Neuro-Life logo"><div><div class="tag">Pack</div><h2>Neuro-Life <span class="price">$9.99</span></h2><p class="short">Life admin pack. Four Neuro tools in one bundle.</p></div></div></summary>
         <p class="more">The cover shows Neuro-House, Neuro-Gifts, Neuro-Chores, and Neuro-Leak together.</p>
-        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Life">Get it on Gumroad</a>
+        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Life">Get it · $9.99</a>
       </details>
       <details data-cat="money">
         <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/4f1w57p0qz4f07upc061h1r8h5vs" alt="Neuro-Budget logo"><div><div class="tag">Money</div><h2>Neuro-Budget</h2><p class="short">Ties each bill to the paycheck that pays it.</p></div></div></summary>
@@ -100,9 +102,9 @@
         <a class="buy" href="https://neuroprojects.gumroad.com/l/wyvtxj">Get it on Gumroad</a>
       </details>
       <details data-cat="kids">
-        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/6og0jlldp4dnjh72lflgfx3iqr0x" alt="Neuro-Binder logo"><div><div class="tag">Kids</div><h2>Neuro-Binder</h2><p class="short">Emergency card for neurodivergent kids.</p></div></div></summary>
+        <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/6og0jlldp4dnjh72lflgfx3iqr0x" alt="Neuro-Binder logo"><div><div class="tag">Kids</div><h2>Neuro-Binder <span class="price">Free</span></h2><p class="short">Emergency card for neurodivergent kids.</p></div></div></summary>
         <ul class="more"><li>QR code with photo, contacts, allergies, and how to help.</li><li>A helper can scan it with no account.</li><li>The scanner cannot edit the card.</li></ul>
-        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Binder">Get it on Gumroad</a>
+        <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Binder">Get it · Free</a>
       </details>
       <details data-cat="home">
         <summary><div class="row"><img class="logo" src="https://public-files.gumroad.com/iwmu90jbgnsmwagj0cl7whs261rx" alt="Neuro-House logo"><div><div class="tag">Home</div><h2>Neuro-House</h2><p class="short">House binder for the details a visitor or worker needs.</p></div></div></summary>
