@@ -15,18 +15,21 @@
     .brand { width:min(220px, 62%); height:auto; display:block; margin:0 auto; }
     nav, .links { display:flex; justify-content:center; gap:10px; padding:12px 0; flex-wrap:wrap; }
     nav a { color:var(--cyan); text-decoration:none; font-size:16px; padding:8px 4px; }
-    .links a { display:inline-flex; align-items:center; gap:8px; color:#071018; background:linear-gradient(90deg, var(--purple), var(--cyan)); text-decoration:none; font-size:17px; font-weight:700; border-radius:999px; padding:12px 16px; } .links svg { width:18px; height:18px; flex:none; }
+    .links a { display:inline-flex; align-items:center; gap:8px; color:#071018; background:linear-gradient(90deg, var(--purple), var(--cyan)); text-decoration:none; font-size:17px; font-weight:700; border-radius:999px; padding:12px 16px; }
+    .links svg { width:18px; height:18px; flex:none; }
     h1 { font-size:clamp(30px, 7vw, 48px); line-height:1.05; margin:18px 0 12px; }
     h2 { margin:0 0 8px; }
     .lede, .note { color:var(--muted); font-size:18px; max-width:40rem; }
-    .steps, .faq { display:grid; gap:10px; padding:8px 0 24px; }
-    .steps { grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); }
-    .step, details, form { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
-    .step strong { display:block; color:var(--cyan); margin-bottom:4px; }
+    .steps { display:flex; gap:8px; flex-wrap:wrap; padding:0 0 16px; color:var(--muted); font-size:13px; }
+    .steps span { background:#140c22; border:1px solid var(--line); border-radius:999px; padding:6px 10px; }
+    .about { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin:8px 0 24px; }
+    .about p { margin:0 0 12px; }
+    .faq { display:grid; gap:10px; padding:8px 0 24px; }
     .filters { display:flex; gap:8px; flex-wrap:wrap; padding:8px 0; }
     .filters button { background:#140c22; color:#efe7ff; border:1px solid var(--line); border-radius:999px; padding:8px 12px; font:inherit; }
     .filters button[aria-pressed="true"] { background:var(--cyan); color:#071018; border-color:var(--cyan); font-weight:700; }
     .grid { display:grid; gap:14px; padding:14px 0 28px; }
+    details, form { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
     summary { cursor:pointer; list-style:none; }
     summary::-webkit-details-marker { display:none; }
     .row { display:flex; gap:12px; align-items:center; }
@@ -50,10 +53,11 @@
     <img class="brand" src="logo.jpg?v=10" alt="Neuro-Glitch. We are different, not less.">
     <nav>
       <a href="#tools">Tools</a>
+      <a href="#about">About</a>
       <a href="#custom">Custom app</a>
-      <a href="https://neuroprojects.gumroad.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7h12l-1 13H7L6 7zm3-3h6l1 3H8l1-3z"/></svg>Gumroad</a>
-      <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z"/></svg>Facebook</a>
-      <a href="mailto:Neuroprojects.help@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v12H3V6zm2 2v.5l7 4.2 7-4.2V8H5zm14 8V11l-7 4.2L5 11v5h14z"/></svg>Email</a>
+      <a href="https://neuroprojects.gumroad.com">Gumroad</a>
+      <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr">Facebook</a>
+      <a href="mailto:Neuroprojects.help@gmail.com">Email</a>
     </nav>
   </header>
   <main>
@@ -64,12 +68,7 @@
       <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z"/></svg>Facebook</a>
       <a href="mailto:Neuroprojects.help@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v12H3V6zm2 2v.5l7 4.2 7-4.2V8H5zm14 8V11l-7 4.2L5 11v5h14z"/></svg>Neuroprojects.help@gmail.com</a>
     </div>
-    <h2>How it works</h2>
-    <div class="steps">
-      <div class="step"><strong>1. Pick a tool</strong>Open a card and read what it does.</div>
-      <div class="step"><strong>2. Buy on Gumroad</strong>You pay there. No account on this site.</div>
-      <div class="step"><strong>3. Use it on your phone</strong>The product page tells you how to open it.</div>
-    </div>
+    <p class="steps"><span>1. Pick a tool</span><span>2. Buy on Gumroad</span><span>3. Use it on your phone</span></p>
     <div class="filters" id="filters">
       <button type="button" aria-pressed="true" data-filter="all">All</button>
       <button type="button" aria-pressed="false" data-filter="pack">Pack</button>
@@ -115,6 +114,11 @@
         <a class="buy" href="https://neuroprojects.gumroad.com/l/Neuro-Gifts">Get it on Gumroad</a>
       </details>
     </section>
+    <section class="about" id="about">
+      <h2>About me</h2>
+      <p>My name is Calin Witt and I am the creator of Neuro-Glitch. I was born at the Cherokee Nation Hastings Hospital in Tahlequah, OK. Fun fact, I was the only baby born in the hospital that day if you believe my Mother! I am a member of the Choctaw Nation Tribe of Oklahoma. My family includes 6 total kids (3 mine and 3 bonus). My 3, King, Legion, and KJ are all Neuro-Divergent and all 3 have unique personalities (and 4 names each). They struggle with how the world is and I want to be a part of something that creates a better future for them! My wife (Erica) and I also have 2 beautiful dogs, Beau (long-haired dachshund) and Moose (my giant deaf Great Dane) and a Burmese Python (Kaa). Yes, from the Jungle Book!</p>
+      <p>Growing up I always knew I was a little different, I just never knew why. I have always been very good at problem-solving (sometimes creating problems just to solve them when I was bored). I discovered in my 20s I was AuDHD, to which no one around me was surprised….but me. I created Neuro-Glitch because I want to be able to help people with cognitive struggles by creating apps that I know help me. Finding a problem and solving it. I am a prior Law-Enforcement Officer as well. I never want anyone to need a tool and not have it so if you are really struggling and need help and one of my tools could help you but you can’t afford it, just let me know and we will work together to figure something out! Thank you all for visiting my site and I am so excited for this journey!</p>
+    </section>
     <h2>Questions</h2>
     <div class="faq">
       <details><summary><h2>Do I need an account here?</h2></summary><p>No. Buying happens on Gumroad.</p></details>
@@ -148,7 +152,11 @@
     </section>
   </main>
   <footer>
-    <div class="links"><a href="https://neuroprojects.gumroad.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7h12l-1 13H7L6 7zm3-3h6l1 3H8l1-3z"/></svg>Gumroad</a><a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z"/></svg>Facebook</a><a href="mailto:Neuroprojects.help@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v12H3V6zm2 2v.5l7 4.2 7-4.2V8H5zm14 8V11l-7 4.2L5 11v5h14z"/></svg>Email me</a></div>
+    <div class="links">
+      <a href="https://neuroprojects.gumroad.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 7h12l-1 13H7L6 7zm3-3h6l1 3H8l1-3z"/></svg>Gumroad</a>
+      <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z"/></svg>Facebook</a>
+      <a href="mailto:Neuroprojects.help@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v12H3V6zm2 2v.5l7 4.2 7-4.2V8H5zm14 8V11l-7 4.2L5 11v5h14z"/></svg>Email me</a>
+    </div>
     <p>Neuro-Glitch Projects · neuroglitchprojects.com</p>
   </footer>
   <script>
