@@ -40,6 +40,9 @@
     .about { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin:8px 0 24px; }
     .about h2 { font-size:28px; }
     .about p { margin:12px 0 0; } .about details { background:transparent; border:0; padding:0; } .about summary h2 { font-size:28px; } .hint { margin:0; color:var(--muted); font-size:13px; }
+    .family { display:grid; grid-template-columns:1fr; gap:12px; margin:14px 0 4px; }
+    .family img { width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line); }
+    @media (min-width:640px) { .family { grid-template-columns:1fr 1fr; } }
     .faq { display:grid; gap:10px; padding:8px 0 24px; }
     .grid { display:grid; gap:14px; padding:14px 0 28px; }
     .formwrap form { background:transparent; border:0; padding:12px 0 0; }
@@ -138,6 +141,7 @@
         <section class="about" id="origin">
       <details>
         <summary><h2>Origin Story</h2><p class="hint">Tap to open</p></summary>
+        <div class="family"><img loading="lazy" src="img/family-couple.svg" alt="Calin and his partner by a lake"><img loading="lazy" src="img/family-kids.svg" alt="Calin&#39;s family by a lake"></div>
         <p>My name is Calin Witt and I am the creator of Neuro-Glitch. I was born at the Cherokee Nation Hastings Hospital in Tahlequah, OK. Fun fact, I was the only baby born in the hospital that day if you believe my Mother! My dad (Mike) and my brother (Colton) taught me most of what I know and my little sister (Hailey) is one of my biggest inspirations (and my favorite sibling). I also have two other little brothers, who are not so little (Seth and Jace) and my Mother (Sandra), whom have all helped shape who I am. I am a member of the Choctaw Nation Tribe of Oklahoma. My family includes 6 total kids (3 mine and 3 bonus). My 3, King, Legion, and KJ are all Neuro-Divergent and all 3 have unique personalities (and 4 names each). They struggle with how the world is and I want to be a part of something that creates a better future for them! My wife (Erica) and I also have 2 beautiful dogs, Beau (long-haired dachshund) and Moose (my giant deaf Great Dane) and a Burmese Python (Kaa). Yes, from the Jungle Book!</p>
         <p>Growing up I always knew I was a little different, I just never knew why. I have always been very good at problem-solving (sometimes creating problems just to solve them when I was bored). I discovered in my 20s I was AuDHD, to which no one around me was surprised….but me. I created Neuro-Glitch because I want to be able to help people with cognitive struggles by creating apps that I know help me. Finding a problem and solving it. I am a prior Law-Enforcement Officer as well. I never want anyone to need a tool and not have it so if you are really struggling and need help and one of my tools could help you but you can’t afford it, just let me know and we will work together to figure something out! Thank you all for visiting my site and I am so excited for this journey!</p>
       </details>
