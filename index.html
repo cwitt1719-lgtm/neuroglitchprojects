@@ -15,8 +15,9 @@
     * { box-sizing: border-box; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at top, #1a1030 0%, var(--bg) 42%); color:var(--text); line-height:1.5; }
     header, main, footer { width:min(880px, calc(100% - 32px)); margin:0 auto; }
-    header { padding:18px 0 0; text-align:center; }
-    .brand { width:min(220px, 62%); height:auto; display:block; margin:0 auto; }
+    header { padding:12px 0 0; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .brand { height:52px; width:auto; display:block; margin:0; flex:none; }
+    header nav { justify-content:flex-start; flex:1 1 240px; padding:4px 0; gap:4px 10px; }
     nav, .links { display:flex; justify-content:center; gap:10px; padding:12px 0; flex-wrap:wrap; }
     nav a { color:var(--cyan); text-decoration:none; font-size:16px; padding:8px 4px; }
     .links a { display:inline-flex; align-items:center; gap:8px; color:#071018; background:linear-gradient(90deg, var(--purple), var(--cyan)); text-decoration:none; font-size:17px; font-weight:700; border-radius:999px; padding:12px 16px; }
@@ -59,7 +60,7 @@
   <header>
     <img class="brand" src="logo.jpg?v=10" alt="Neuro-Glitch. We are different, not less.">
     <nav>
-      <a href="#tools">Tools</a>
+      <a href="#apps">Apps</a>
       <a href="#origin">Origin Story</a>
       <a href="#joke">Joke discount</a>
       <a href="#custom">Custom app</a>
@@ -69,13 +70,13 @@
     </nav>
   </header>
   <main>
-    <h1>Tools I built because my brain needed them.</h1>
+    <h1>Apps I built because my brain needed them.</h1>
     <p class="lede">I&#39;m AuDHD. I kept forgetting bills, chores, and gifts, so I built apps to fix it, and now you can use them too. You pay once, and there&#39;s no monthly fee. Need something different? I&#39;ll build you a custom app.</p>
     <div class="links">
       <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z"/></svg>Facebook</a>
       <a href="mailto:Neuroprojects.help@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v12H3V6zm2 2v.5l7 4.2 7-4.2V8H5zm14 8V11l-7 4.2L5 11v5h14z"/></svg>Neuroprojects.help@gmail.com</a>
     </div>
-    <p class="steps"><span>1. Pick a tool</span><span>2. Pay securely by card</span><span>3. Use it on your phone</span></p>
+    <p class="steps"><span>1. Pick an app</span><span>2. Pay securely by card</span><span>3. Use it on your phone</span></p>
     <div class="filters" id="filters">
       <button type="button" aria-pressed="true" data-filter="all">All</button>
       <button type="button" aria-pressed="false" data-filter="pack">Pack</button>
@@ -85,9 +86,9 @@
       <button type="button" aria-pressed="false" data-filter="people">People</button>
       <button type="button" aria-pressed="false" data-filter="travel">Travel</button>
     </div>
-    <section class="grid" id="tools">
+    <section class="grid" id="apps">
       <details data-cat="pack">
-        <summary><div class="row"><img class="logo" src="img/neuro-life.svg" alt="Neuro-Life logo"><div><div class="tag">Pack</div><h2>Neuro-Life <span class="price">$14.99</span></h2><p class="short">ADHD and autism family app pack. All 6 tools in one purchase.</p></div></div></summary>
+        <summary><div class="row"><img class="logo" src="img/neuro-life.svg" alt="Neuro-Life logo"><div><div class="tag">Pack</div><h2>Neuro-Life <span class="price">$14.99</span></h2><p class="short">ADHD and autism family app pack. All 6 apps in one purchase.</p></div></div></summary>
         <ul class="more"><li>Neuro-Chores</li><li>Neuro-House</li><li>Neuro-Leak</li><li>Neuro-Gifts</li><li>Neuro-Trip</li><li>Neuro-Budget</li></ul>
         <a class="buy" href="https://buy.stripe.com/5kQfZj4Zwcn02ruaS0b3q06">Get it · $14.99</a>
       </details>
@@ -106,11 +107,6 @@
         <ul class="more"><li>Add kids and assign chores.</li><li>Track points and redeem rewards.</li><li>Optional parent PIN. No monthly fee. No App Store account.</li></ul>
         <a class="buy" href="https://buy.stripe.com/9B6aEZ8bI9aO8PSe4cb3q04">Get it · $4.99</a>
       </details>
-      <details data-cat="kids">
-        <summary><div class="row"><img class="logo" src="img/neuro-binder.svg" alt="Neuro-Binder logo"><div><div class="tag">Kids</div><h2>Neuro-Binder <span class="price">Free</span></h2><p class="short">Emergency card for autistic and neurodivergent kids. QR code for helpers.</p></div></div></summary>
-        <ul class="more"><li>QR code with photo, contacts, allergies, and how to help.</li><li>A helper can scan it with no account.</li><li>The scanner cannot edit the card.</li></ul>
-        <a class="buy" href="https://forge-zest-kite-frost.grok.me" target="_blank" rel="noopener">Open free app</a>
-      </details>
       <details data-cat="home">
         <summary><div class="row"><img class="logo" src="img/neuro-house.svg" alt="Neuro-House logo"><div><div class="tag">Home</div><h2>Neuro-House <span class="price">$4.99</span></h2><p class="short">Home information binder. Wi-Fi, shutoffs, alarm codes, and routines.</p></div></div></summary>
         <ul class="more"><li>Keys, alarm codes, shutoffs, Wi-Fi, layout, and routines.</li><li>Share a QR code with a plumber, pet sitter, or guest.</li><li>Nothing is uploaded.</li></ul>
@@ -125,6 +121,11 @@
         <summary><div class="row"><img class="logo" src="img/neuro-trip.svg" alt="Neuro-Trip logo"><div><div class="tag">Travel</div><h2>Neuro-Trip <span class="price">$4.99</span></h2><p class="short">Trip planner that works backward from your arrival time. Stops and buffer included.</p></div></div></summary>
         <ul class="more"><li>Set the arrival time first.</li><li>Add stops and a buffer.</li><li>Shows when you need to leave.</li></ul>
         <a class="buy" href="https://buy.stripe.com/bJecN79fM3Qud68e4cb3q05">Get it · $4.99</a>
+      </details>
+      <details data-cat="kids">
+        <summary><div class="row"><img class="logo" src="img/neuro-binder.svg" alt="Neuro-Binder logo"><div><div class="tag">Kids</div><h2>Neuro-Binder <span class="price">Free</span></h2><p class="short">Emergency card for autistic and neurodivergent kids. QR code for helpers.</p></div></div></summary>
+        <ul class="more"><li>QR code with photo, contacts, allergies, and how to help.</li><li>A helper can scan it with no account.</li><li>The scanner cannot edit the card.</li></ul>
+        <a class="buy" href="https://forge-zest-kite-frost.grok.me" target="_blank" rel="noopener">Open free app</a>
       </details>
     </section>
         <section class="about" id="origin">
@@ -204,7 +205,7 @@
   </footer>
   <script>
     const buttons = document.querySelectorAll("#filters button");
-    const cards = document.querySelectorAll("#tools details");
+    const cards = document.querySelectorAll("#apps details");
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         buttons.forEach((item) => item.setAttribute("aria-pressed", "false"));
