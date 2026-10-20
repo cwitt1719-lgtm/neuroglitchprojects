@@ -51,6 +51,12 @@
     .get { margin:10px 0 0; padding:10px 12px; background:#140c22; border:1px solid var(--line); border-radius:12px; font-size:15px; }
     .get p { margin:0; }
     .get .get-all { margin-top:6px; color:var(--cyan); font-weight:700; font-size:14px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+    .card .buy { margin-top:12px; }
+    details.what { background:transparent; border:0; border-top:1px solid var(--line); border-radius:0; padding:10px 0 0; margin-top:12px; }
+    details.what > summary { color:var(--cyan); font-size:15px; font-weight:600; }
+    details.what > summary::after { content:" ▾"; }
+    details.what[open] > summary::after { content:" ▴"; }
     .faq { display:grid; gap:10px; padding:8px 0 24px; }
     .grid { display:grid; gap:14px; padding:14px 0 28px; }
     .formwrap form { background:transparent; border:0; padding:12px 0 0; }
@@ -93,53 +99,66 @@
   <main>
     <h1>Apps I built because my brain needed them.</h1>
     <p class="lede">I&#39;m AuDHD. I kept forgetting bills, chores, and gifts, so I built apps to fix it, and now you can use them too. You pay once, and there&#39;s no monthly fee. Need something different? I&#39;ll build you a custom app.</p>
-    <div class="links">
-      <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z"/></svg>Facebook</a>
-      <a href="mailto:Neuroprojects.help@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v12H3V6zm2 2v.5l7 4.2 7-4.2V8H5zm14 8V11l-7 4.2L5 11v5h14z"/></svg>Neuroprojects.help@gmail.com</a>
-    </div>
-    <p class="steps"><span>1. Pick an app</span><span>2. Pay securely by card</span><span>3. Use it on your phone</span></p>
     <section class="grid" id="apps">
       <details data-cat="pack">
         <summary><div class="row"><img class="logo" src="img/neuro-life.svg" alt="Neuro-Life logo"><div><h2>Neuro-Life <span class="price">$14.99</span></h2><p class="short">ADHD and autism family app pack. All 6 apps in one purchase.</p><p class="save">Save $15 vs. buying all 6 separately ($29.94).</p></div></div></summary>
         <ul class="more"><li>Neuro-Chores</li><li>Neuro-House</li><li>Neuro-Leak</li><li>Neuro-Gifts</li><li>Neuro-Trip</li><li>Neuro-Budget</li></ul>
         <a class="buy" href="https://buy.stripe.com/5kQfZj4Zwcn02ruaS0b3q06">Get it · $14.99</a>
       </details>
-      <details data-cat="money">
-        <summary><div class="row"><img class="logo" src="img/neuro-budget.svg" alt="Neuro-Budget logo"><div><h2>Neuro-Budget <span class="price">$4.99</span></h2><p class="short">I built this from the spreadsheet that got me through my first time handling money, when I was panicking. You can see your whole month before you get paid.</p><div class="get"><p>Sort your bills between your paychecks, track your savings, and see real numbers for what's safe to spend. It does the math so you don't get overwhelmed.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div></div></div></summary>
+      <article class="card" data-cat="money">
+        <div class="row"><img class="logo" src="img/neuro-budget.svg" alt="Neuro-Budget logo"><div><h2>Neuro-Budget <span class="price">$4.99</span></h2><p class="short">I built this from the spreadsheet that got me through my first time handling money, when I was panicking. You can see your whole month before you get paid.</p></div></div>
+        <details class="what"><summary>See what you get</summary>
+        <div class="get"><p>Sort your bills between your paychecks, track your savings, and see real numbers for what's safe to spend. It does the math so you don't get overwhelmed.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Shows which check pays which bill.</li><li>Shows the amount safe to spend after those bills.</li><li>Runs on your phone. No spreadsheet.</li></ul>
         <div class="shots"><a href="img/shots/budget-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/budget-1.svg" alt="Neuro-Budget paycheck screen showing income, bills committed, and safe-to-spend amount" width="140"></a><a href="img/shots/budget-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/budget-2.svg" alt="Neuro-Budget bills screen with an unpaid bill due date and Mark Paid button" width="140"></a></div>
+        </details>
         <a class="buy" href="https://buy.stripe.com/7sYaEZajQbiW6HK1hqb3q00">Get it · $4.99</a>
-      </details>
-      <details data-cat="money">
-        <summary><div class="row"><img class="logo" src="img/neuro-leak.svg" alt="Neuro-Leak logo"><div><h2>Neuro-Leak <span class="price">$4.99</span></h2><p class="short">I've promised myself "I'll cancel before it renews" more times than I can count. Recently, a free trial for a video editing app turned into a full year's charge, and my wife was not happy. I built this so it stops happening.</p><div class="get"><p>Track your subscriptions and see what they cost per year. It shows when each free trial ends, so you can cancel before the full price hits.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div></div></div></summary>
+      </article>
+      <article class="card" data-cat="money">
+        <div class="row"><img class="logo" src="img/neuro-leak.svg" alt="Neuro-Leak logo"><div><h2>Neuro-Leak <span class="price">$4.99</span></h2><p class="short">I've promised myself "I'll cancel before it renews" more times than I can count. Recently, a free trial for a video editing app turned into a full year's charge, and my wife was not happy. I built this so it stops happening.</p></div></div>
+        <details class="what"><summary>See what you get</summary>
+        <div class="get"><p>Track your subscriptions and see what they cost per year. It shows when each free trial ends, so you can cancel before the full price hits.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Add a plan with price, due date, and billing cycle.</li><li>See the true yearly cost.</li><li>One tap shows due trials and payments.</li></ul>
         <div class="shots"><a href="img/shots/leak-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/leak-1.svg" alt="Neuro-Leak 14-day horizon with monthly and yearly subscription cost and trials ending soon" width="140"></a><a href="img/shots/leak-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/leak-2.svg" alt="Neuro-Leak subscriptions list with free trials and upcoming charges" width="140"></a></div>
+        </details>
         <a class="buy" href="https://buy.stripe.com/4gM4gBbnUaeSc248JSb3q03">Get it · $4.99</a>
-      </details>
-      <details data-cat="kids">
-        <summary><div class="row"><img class="logo" src="img/neuro-chores.svg" alt="Neuro-Chores logo"><div><h2>Neuro-Chores <span class="price">$4.99</span></h2><p class="short">With three kids and my memory, I could never keep track of who did what, so I'd get overwhelmed and stop asking them to do anything. Other apps were too complicated and only about money. My kids hate losing as much as I do, so I made it a game.</p><div class="get"><p>Set your own chores and rewards, and the kids earn points. A running scoreboard shows who has done the most and who has the most points, so they push to beat each other.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div></div></div></summary>
+      </article>
+      <article class="card" data-cat="kids">
+        <div class="row"><img class="logo" src="img/neuro-chores.svg" alt="Neuro-Chores logo"><div><h2>Neuro-Chores <span class="price">$4.99</span></h2><p class="short">With three kids and my memory, I could never keep track of who did what, so I'd get overwhelmed and stop asking them to do anything. Other apps were too complicated and only about money. My kids hate losing as much as I do, so I made it a game.</p></div></div>
+        <details class="what"><summary>See what you get</summary>
+        <div class="get"><p>Set your own chores and rewards, and the kids earn points. A running scoreboard shows who has done the most and who has the most points, so they push to beat each other.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Add kids and assign chores.</li><li>Track points and redeem rewards.</li><li>Optional parent PIN. No monthly fee. No App Store account.</li></ul>
         <div class="shots"><a href="img/shots/chores-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/chores-1.svg" alt="Neuro-Chores family overview showing each kid’s chores done and points" width="140"></a><a href="img/shots/chores-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/chores-2.svg" alt="Neuro-Chores kid screen with points, a Redeem button, and chore list" width="140"></a></div>
+        </details>
         <a class="buy" href="https://buy.stripe.com/9B6aEZ8bI9aO8PSe4cb3q04">Get it · $4.99</a>
-      </details>
-      <details data-cat="home">
-        <summary><div class="row"><img class="logo" src="img/neuro-house.svg" alt="Neuro-House logo"><div><h2>Neuro-House <span class="price">$4.99</span></h2><p class="short">When someone puts me on the spot, my brain goes blank, even about my own house. I built this so I could just show my phone or share a QR code instead of trying to remember and explain.</p><div class="get"><p>A household binder for Wi-Fi, pets, shutoffs, contacts, routines, and more. Share a QR card or hand over the phone, so a sitter or plumber gets what they need without the small talk.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div></div></div></summary>
+      </article>
+      <article class="card" data-cat="home">
+        <div class="row"><img class="logo" src="img/neuro-house.svg" alt="Neuro-House logo"><div><h2>Neuro-House <span class="price">$4.99</span></h2><p class="short">When someone puts me on the spot, my brain goes blank, even about my own house. I built this so I could just show my phone or share a QR code instead of trying to remember and explain.</p></div></div>
+        <details class="what"><summary>See what you get</summary>
+        <div class="get"><p>A household binder for Wi-Fi, pets, shutoffs, contacts, routines, and more. Share a QR card or hand over the phone, so a sitter or plumber gets what they need without the small talk.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Keys, alarm codes, shutoffs, Wi-Fi, layout, and routines.</li><li>Share a QR code with a plumber, pet sitter, or guest.</li><li>Nothing is uploaded.</li></ul>
         <div class="shots"><a href="img/shots/house-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/house-1.svg" alt="Neuro-House home binder with rooms for Wi-Fi, alarm, shutoffs, pets, and contacts" width="140"></a><a href="img/shots/house-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/house-2.svg" alt="Neuro-House pets page with a pet’s age, food, and care notes" width="140"></a><a href="img/shots/house-3.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/house-3.svg" alt="Neuro-House share screen with a QR code a sitter can scan to read the pet notes" width="140"></a></div>
+        </details>
         <a class="buy" href="https://buy.stripe.com/14A3cx0Jgcn07LO5xGb3q02">Get it · $4.99</a>
-      </details>
-      <details data-cat="people">
-        <summary><div class="row"><img class="logo" src="img/neuro-gifts.svg" alt="Neuro-Gifts logo"><div><h2>Neuro-Gifts <span class="price">$4.99</span></h2><p class="short">People thought I didn't care about birthdays. I did. I just couldn't remember sizes, or that thing they pointed at in the store, so I froze and got nothing. I built this so I'd stop letting people down.</p><div class="get"><p>Save sizes, likes, birthdays, and gift ideas the moment you hear them, so you're never stuck guessing.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div></div></div></summary>
+      </article>
+      <article class="card" data-cat="people">
+        <div class="row"><img class="logo" src="img/neuro-gifts.svg" alt="Neuro-Gifts logo"><div><h2>Neuro-Gifts <span class="price">$4.99</span></h2><p class="short">People thought I didn't care about birthdays. I did. I just couldn't remember sizes, or that thing they pointed at in the store, so I froze and got nothing. I built this so I'd stop letting people down.</p></div></div>
+        <details class="what"><summary>See what you get</summary>
+        <div class="get"><p>Save sizes, likes, birthdays, and gift ideas the moment you hear them, so you're never stuck guessing.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Stores the details you forget.</li><li>Tracks a gift from idea to given.</li></ul>
         <div class="shots"><a href="img/shots/gifts-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/gifts-1.svg" alt="Neuro-Gifts people list with a birthday and gift ideas" width="140"></a><a href="img/shots/gifts-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/gifts-2.svg" alt="Neuro-Gifts person profile with clothing sizes, colors, and likes" width="140"></a></div>
+        </details>
         <a class="buy" href="https://buy.stripe.com/aFa14p77Eev83vyaS0b3q01">Get it · $4.99</a>
-      </details>
-      <details data-cat="travel">
-        <summary><div class="row"><img class="logo" src="img/neuro-trip.svg" alt="Neuro-Trip logo"><div><h2>Neuro-Trip <span class="price">$4.99</span></h2><p class="short">Time blindness makes me late, even to work. I'd work backwards from the start time (drive, stops, getting there early), then forget the answer and have to do the math again until I just guessed. Now I do it once and look at my phone. The checklist was my wife's idea, because when I rush, I forget things.</p><div class="get"><p>Enter when you need to be there and what's on the way. It tells you when to start getting ready and when to leave, plus a checklist so nothing gets left behind.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div></div></div></summary>
+      </article>
+      <article class="card" data-cat="travel">
+        <div class="row"><img class="logo" src="img/neuro-trip.svg" alt="Neuro-Trip logo"><div><h2>Neuro-Trip <span class="price">$4.99</span></h2><p class="short">Time blindness makes me late, even to work. I'd work backwards from the start time (drive, stops, getting there early), then forget the answer and have to do the math again until I just guessed. Now I do it once and look at my phone. The checklist was my wife's idea, because when I rush, I forget things.</p></div></div>
+        <details class="what"><summary>See what you get</summary>
+        <div class="get"><p>Enter when you need to be there and what's on the way. It tells you when to start getting ready and when to leave, plus a checklist so nothing gets left behind.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Set the arrival time first.</li><li>Add stops and a buffer.</li><li>Shows when you need to leave.</li></ul>
         <div class="shots"><a href="img/shots/trip-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/trip-1.svg" alt="Neuro-Trip upcoming trip with the time to start getting ready" width="140"></a><a href="img/shots/trip-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/trip-2.svg" alt="Neuro-Trip schedule working backward from arrival time with stops" width="140"></a><a href="img/shots/trip-3.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/trip-3.svg" alt="Neuro-Trip packing checklist before leaving" width="140"></a></div>
+        </details>
         <a class="buy" href="https://buy.stripe.com/bJecN79fM3Qud68e4cb3q05">Get it · $4.99</a>
-      </details>
+      </article>
       <details data-cat="kids">
         <summary><div class="row"><img class="logo" src="img/neuro-binder.svg" alt="Neuro-Binder logo"><div><h2>Neuro-Binder <span class="price">Free</span></h2><p class="short">Emergency card for autistic and neurodivergent kids. QR code for helpers.</p></div></div></summary>
         <ul class="more"><li>QR code with photo, contacts, allergies, and how to help.</li><li>A helper can scan it with no account.</li><li>The scanner cannot edit the card.</li></ul>
