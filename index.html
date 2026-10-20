@@ -57,6 +57,12 @@
     details.what > summary { color:var(--cyan); font-size:15px; font-weight:600; }
     details.what > summary::after { content:" ▾"; }
     details.what[open] > summary::after { content:" ▴"; }
+    .lb { position:fixed; inset:0; background:rgba(0,0,0,.9); display:none; align-items:center; justify-content:center; z-index:1000; }
+    .lb.on { display:flex; }
+    .lb img { max-width:92vw; max-height:88vh; width:auto; height:auto; object-fit:contain; border-radius:12px; }
+    .lb button { position:absolute; background:rgba(255,255,255,.12); color:#fff; border:0; border-radius:999px; width:44px; height:44px; font-size:24px; line-height:44px; padding:0; cursor:pointer; }
+    .lb .x { top:14px; right:14px; } .lb .pv { left:10px; top:50%; transform:translateY(-50%); } .lb .nx { right:10px; top:50%; transform:translateY(-50%); }
+    body.lb-open { overflow:hidden; }
     .faq { display:grid; gap:10px; padding:8px 0 24px; }
     .grid { display:grid; gap:14px; padding:14px 0 28px; }
     .formwrap form { background:transparent; border:0; padding:12px 0 0; }
@@ -112,7 +118,7 @@
         <details class="what"><summary>See what you get</summary>
         <div class="get"><p>Sort your bills between your paychecks, track your savings, and see real numbers for what's safe to spend. It does the math so you don't get overwhelmed.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Shows which check pays which bill.</li><li>Shows the amount safe to spend after those bills.</li><li>Runs on your phone. No spreadsheet.</li></ul>
-        <div class="shots"><a href="img/shots/budget-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/budget-1.svg" alt="Neuro-Budget paycheck screen showing income, bills committed, and safe-to-spend amount" width="140"></a><a href="img/shots/budget-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/budget-2.svg" alt="Neuro-Budget bills screen with an unpaid bill due date and Mark Paid button" width="140"></a></div>
+        <div class="shots"><a href="img/shots/budget-1.svg"><img loading="lazy" src="img/shots/budget-1.svg" alt="Neuro-Budget paycheck screen showing income, bills committed, and safe-to-spend amount" width="140"></a><a href="img/shots/budget-2.svg"><img loading="lazy" src="img/shots/budget-2.svg" alt="Neuro-Budget bills screen with an unpaid bill due date and Mark Paid button" width="140"></a></div>
         </details>
         <a class="buy" href="https://buy.stripe.com/7sYaEZajQbiW6HK1hqb3q00">Get it · $4.99</a>
       </article>
@@ -121,7 +127,7 @@
         <details class="what"><summary>See what you get</summary>
         <div class="get"><p>Track your subscriptions and see what they cost per year. It shows when each free trial ends, so you can cancel before the full price hits.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Add a plan with price, due date, and billing cycle.</li><li>See the true yearly cost.</li><li>One tap shows due trials and payments.</li></ul>
-        <div class="shots"><a href="img/shots/leak-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/leak-1.svg" alt="Neuro-Leak 14-day horizon with monthly and yearly subscription cost and trials ending soon" width="140"></a><a href="img/shots/leak-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/leak-2.svg" alt="Neuro-Leak subscriptions list with free trials and upcoming charges" width="140"></a></div>
+        <div class="shots"><a href="img/shots/leak-1.svg"><img loading="lazy" src="img/shots/leak-1.svg" alt="Neuro-Leak 14-day horizon with monthly and yearly subscription cost and trials ending soon" width="140"></a><a href="img/shots/leak-2.svg"><img loading="lazy" src="img/shots/leak-2.svg" alt="Neuro-Leak subscriptions list with free trials and upcoming charges" width="140"></a></div>
         </details>
         <a class="buy" href="https://buy.stripe.com/4gM4gBbnUaeSc248JSb3q03">Get it · $4.99</a>
       </article>
@@ -130,7 +136,7 @@
         <details class="what"><summary>See what you get</summary>
         <div class="get"><p>Set your own chores and rewards, and the kids earn points. A running scoreboard shows who has done the most and who has the most points, so they push to beat each other.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Add kids and assign chores.</li><li>Track points and redeem rewards.</li><li>Optional parent PIN. No monthly fee. No App Store account.</li></ul>
-        <div class="shots"><a href="img/shots/chores-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/chores-1.svg" alt="Neuro-Chores family overview showing each kid’s chores done and points" width="140"></a><a href="img/shots/chores-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/chores-2.svg" alt="Neuro-Chores kid screen with points, a Redeem button, and chore list" width="140"></a></div>
+        <div class="shots"><a href="img/shots/chores-1.svg"><img loading="lazy" src="img/shots/chores-1.svg" alt="Neuro-Chores family overview showing each kid’s chores done and points" width="140"></a><a href="img/shots/chores-2.svg"><img loading="lazy" src="img/shots/chores-2.svg" alt="Neuro-Chores kid screen with points, a Redeem button, and chore list" width="140"></a></div>
         </details>
         <a class="buy" href="https://buy.stripe.com/9B6aEZ8bI9aO8PSe4cb3q04">Get it · $4.99</a>
       </article>
@@ -139,7 +145,7 @@
         <details class="what"><summary>See what you get</summary>
         <div class="get"><p>A household binder for Wi-Fi, pets, shutoffs, contacts, routines, and more. Share a QR card or hand over the phone, so a sitter or plumber gets what they need without the small talk.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Keys, alarm codes, shutoffs, Wi-Fi, layout, and routines.</li><li>Share a QR code with a plumber, pet sitter, or guest.</li><li>Nothing is uploaded.</li></ul>
-        <div class="shots"><a href="img/shots/house-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/house-1.svg" alt="Neuro-House home binder with rooms for Wi-Fi, alarm, shutoffs, pets, and contacts" width="140"></a><a href="img/shots/house-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/house-2.svg" alt="Neuro-House pets page with a pet’s age, food, and care notes" width="140"></a><a href="img/shots/house-3.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/house-3.svg" alt="Neuro-House share screen with a QR code a sitter can scan to read the pet notes" width="140"></a></div>
+        <div class="shots"><a href="img/shots/house-1.svg"><img loading="lazy" src="img/shots/house-1.svg" alt="Neuro-House home binder with rooms for Wi-Fi, alarm, shutoffs, pets, and contacts" width="140"></a><a href="img/shots/house-2.svg"><img loading="lazy" src="img/shots/house-2.svg" alt="Neuro-House pets page with a pet’s age, food, and care notes" width="140"></a><a href="img/shots/house-3.svg"><img loading="lazy" src="img/shots/house-3.svg" alt="Neuro-House share screen with a QR code a sitter can scan to read the pet notes" width="140"></a></div>
         </details>
         <a class="buy" href="https://buy.stripe.com/14A3cx0Jgcn07LO5xGb3q02">Get it · $4.99</a>
       </article>
@@ -148,7 +154,7 @@
         <details class="what"><summary>See what you get</summary>
         <div class="get"><p>Save sizes, likes, birthdays, and gift ideas the moment you hear them, so you're never stuck guessing.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Stores the details you forget.</li><li>Tracks a gift from idea to given.</li></ul>
-        <div class="shots"><a href="img/shots/gifts-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/gifts-1.svg" alt="Neuro-Gifts people list with a birthday and gift ideas" width="140"></a><a href="img/shots/gifts-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/gifts-2.svg" alt="Neuro-Gifts person profile with clothing sizes, colors, and likes" width="140"></a></div>
+        <div class="shots"><a href="img/shots/gifts-1.svg"><img loading="lazy" src="img/shots/gifts-1.svg" alt="Neuro-Gifts people list with a birthday and gift ideas" width="140"></a><a href="img/shots/gifts-2.svg"><img loading="lazy" src="img/shots/gifts-2.svg" alt="Neuro-Gifts person profile with clothing sizes, colors, and likes" width="140"></a></div>
         </details>
         <a class="buy" href="https://buy.stripe.com/aFa14p77Eev83vyaS0b3q01">Get it · $4.99</a>
       </article>
@@ -157,7 +163,7 @@
         <details class="what"><summary>See what you get</summary>
         <div class="get"><p>Enter when you need to be there and what's on the way. It tells you when to start getting ready and when to leave, plus a checklist so nothing gets left behind.</p><p class="get-all">Works on any phone. Add it to your home screen. Guide PDF included. Pay once.</p></div>
         <ul class="more"><li>Set the arrival time first.</li><li>Add stops and a buffer.</li><li>Shows when you need to leave.</li></ul>
-        <div class="shots"><a href="img/shots/trip-1.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/trip-1.svg" alt="Neuro-Trip upcoming trip with the time to start getting ready" width="140"></a><a href="img/shots/trip-2.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/trip-2.svg" alt="Neuro-Trip schedule working backward from arrival time with stops" width="140"></a><a href="img/shots/trip-3.svg" target="_blank" rel="noopener"><img loading="lazy" src="img/shots/trip-3.svg" alt="Neuro-Trip packing checklist before leaving" width="140"></a></div>
+        <div class="shots"><a href="img/shots/trip-1.svg"><img loading="lazy" src="img/shots/trip-1.svg" alt="Neuro-Trip upcoming trip with the time to start getting ready" width="140"></a><a href="img/shots/trip-2.svg"><img loading="lazy" src="img/shots/trip-2.svg" alt="Neuro-Trip schedule working backward from arrival time with stops" width="140"></a><a href="img/shots/trip-3.svg"><img loading="lazy" src="img/shots/trip-3.svg" alt="Neuro-Trip packing checklist before leaving" width="140"></a></div>
         </details>
         <a class="buy" href="https://buy.stripe.com/bJecN79fM3Qud68e4cb3q05">Get it · $4.99</a>
       </article>
@@ -260,6 +266,21 @@
   <script>
     function openHash(){ var s=document.querySelector(location.hash||"#none"); if(s&&s.tagName==="SECTION"){ var d=s.querySelector("details.formwrap"); if(d) d.open=true; } }
     window.addEventListener("hashchange", openHash); openHash();
+  </script>
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot"><img alt=""><button class="pv" type="button" aria-label="Previous">&#8249;</button><button class="nx" type="button" aria-label="Next">&#8250;</button><button class="x" type="button" aria-label="Close">&times;</button></div>
+  <script>
+    (function(){
+      var lb=document.getElementById("lb"), im=lb.querySelector("img"), set=[], i=0, sx=null;
+      function show(){ var a=set[i]; im.src=a.getAttribute("href"); im.alt=a.querySelector("img").alt; lb.querySelector(".pv").style.display=lb.querySelector(".nx").style.display=set.length>1?"":"none"; }
+      function open(a){ set=[].slice.call(a.parentNode.querySelectorAll("a")); i=set.indexOf(a); show(); lb.classList.add("on"); document.body.classList.add("lb-open"); }
+      function close(){ lb.classList.remove("on"); document.body.classList.remove("lb-open"); im.src=""; }
+      function go(d){ i=(i+d+set.length)%set.length; show(); }
+      document.querySelectorAll(".shots a").forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); open(a); }); });
+      lb.addEventListener("click",function(e){ if(e.target.classList.contains("pv")) go(-1); else if(e.target.classList.contains("nx")) go(1); else if(e.target!==im) close(); });
+      document.addEventListener("keydown",function(e){ if(!lb.classList.contains("on")) return; if(e.key==="Escape") close(); if(e.key==="ArrowLeft") go(-1); if(e.key==="ArrowRight") go(1); });
+      lb.addEventListener("touchstart",function(e){ sx=e.touches[0].clientX; },{passive:true});
+      lb.addEventListener("touchend",function(e){ if(sx===null) return; var dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>40) go(dx<0?1:-1); });
+    })();
   </script>
 </body>
 </html>
