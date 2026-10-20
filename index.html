@@ -43,6 +43,11 @@
     .family { display:grid; grid-template-columns:1fr; gap:12px; margin:14px 0 4px; }
     .family img { width:100%; height:auto; display:block; border-radius:14px; border:1px solid var(--line); }
     @media (min-width:640px) { .family { grid-template-columns:1fr 1fr; } }
+    .reviews { display:grid; gap:12px; padding:8px 0 28px; }
+    .review { margin:0; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+    .review blockquote { margin:0; font-size:17px; }
+    .review figcaption { margin-top:8px; color:var(--cyan); font-weight:700; font-size:14px; }
+    #reviews > h2 { font-size:28px; }
     .faq { display:grid; gap:10px; padding:8px 0 24px; }
     .grid { display:grid; gap:14px; padding:14px 0 28px; }
     .formwrap form { background:transparent; border:0; padding:12px 0 0; }
@@ -137,6 +142,14 @@
         <ul class="more"><li>QR code with photo, contacts, allergies, and how to help.</li><li>A helper can scan it with no account.</li><li>The scanner cannot edit the card.</li></ul>
         <a class="buy" href="https://forge-zest-kite-frost.grok.me" target="_blank" rel="noopener">Open free app</a>
       </details>
+    </section>
+    <section id="reviews">
+    <h2>What people are saying</h2>
+    <div class="reviews">
+      <figure class="review"><blockquote>“So I've actually tried this one out so far and I like this one! I think I'm gonna have mom do it too!”</blockquote><figcaption>— Allie, on Neuro-Leak</figcaption></figure>
+      <figure class="review"><blockquote>“Calin Witt is doing amazing things if you're not following him you should you can learn so much from him”</blockquote><figcaption>— Kim</figcaption></figure>
+      <figure class="review"><blockquote>“NeuroGlitch Projects is such a refreshing, authentic space. You can immediately tell it was created by someone who actually lives the neurodivergent experience rather than just marketing to it. The tools feel purposeful, intuitive, and genuinely practical for ADHD/autistic brains. Plus, the personality and humor built right into the site make it such a fun experience to visit. Huge props to the creator—definitely worth checking out!”</blockquote><figcaption>— Anonymous</figcaption></figure>
+    </div>
     </section>
         <section class="about" id="origin">
       <details>
