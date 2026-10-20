@@ -33,6 +33,7 @@
     .about p { margin:12px 0 0; } .about details { background:transparent; border:0; padding:0; } .about summary h2 { font-size:28px; } .hint { margin:0; color:var(--muted); font-size:13px; }
     .faq { display:grid; gap:10px; padding:8px 0 24px; }
     .grid { display:grid; gap:14px; padding:14px 0 28px; }
+    .formwrap form { background:transparent; border:0; padding:12px 0 0; }
     details, form { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
     summary { cursor:pointer; list-style:none; }
     summary::-webkit-details-marker { display:none; }
@@ -125,6 +126,7 @@
     <section class="custom" id="joke">
       <h2>Send a joke, get a discount</h2>
       <p class="note">Send a joke. You get 25% off one product. If it makes me laugh, you get 50% off. I reply by email with the discount. This does not apply to bundles.</p>
+      <details class="formwrap"><summary><h2>Open the form</h2><p class="hint">Tap to open</p></summary>
       <form action="https://formsubmit.co/Neuroprojects.help@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Joke for a discount">
         <input type="hidden" name="_next" value="https://neuroglitchprojects.com/thanks.html">
@@ -140,10 +142,12 @@
         <textarea id="joke" name="joke" required></textarea>
         <p><button class="send" type="submit">Send joke</button></p>
       </form>
+      </details>
     </section>
     <section class="custom" id="custom">
       <h2>Custom app estimate</h2>
       <p class="note">This form sends to Neuroprojects.help@gmail.com.</p>
+      <details class="formwrap"><summary><h2>Open the form</h2><p class="hint">Tap to open</p></summary>
       <form action="https://formsubmit.co/Neuroprojects.help@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Custom app estimate request">
         <input type="hidden" name="_next" value="https://neuroglitchprojects.com/thanks.html">
@@ -165,6 +169,7 @@
         <input id="when" name="when">
         <p><button class="send" type="submit">Send estimate request</button></p>
       </form>
+      </details>
     </section>
     <section id="faq">
     <h2>Questions</h2>
@@ -190,5 +195,9 @@
     <p>Neuro-Glitch Projects · neuroglitchprojects.com</p>
     <p class="credit">Built with <a href="https://grok.com">Grok</a></p>
   </footer>
+  <script>
+    function openHash(){ var s=document.querySelector(location.hash||"#none"); if(s&&s.tagName==="SECTION"){ var d=s.querySelector("details.formwrap"); if(d) d.open=true; } }
+    window.addEventListener("hashchange", openHash); openHash();
+  </script>
 </body>
 </html>
