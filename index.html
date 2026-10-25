@@ -97,7 +97,7 @@
     .menu a:hover, .menu a:focus { background:#1c1230; color:var(--cyan); }
     .hello { display:grid; gap:16px; padding:8px 0 28px; }
     .hello .top { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-    .photo { width:112px; height:112px; border-radius:50%; object-fit:cover; border:3px solid transparent; background:linear-gradient(#07060f,#07060f) padding-box, linear-gradient(135deg,var(--purple),var(--cyan),#ff4fd8) border-box; box-shadow:0 0 22px rgba(180,76,255,.45); }
+    .photo { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center; border-radius:18px; border:2px solid transparent; background:linear-gradient(#07060f,#07060f) padding-box, linear-gradient(135deg,var(--purple),var(--cyan),#ff4fd8) border-box; box-shadow:0 0 18px rgba(180,76,255,.45), 0 0 34px rgba(46,231,255,.2), 0 0 50px rgba(255,79,216,.15); }
     .hello h1 { margin:0; font-size:34px; line-height:1.15; }
     .tag { margin:6px 0 0; color:var(--cyan); font-weight:700; font-size:16px; }
     .hello p { margin:0; font-size:17px; }
@@ -125,9 +125,8 @@
   </nav>
   <main>
     <section class="hello" id="about">
+      <img class="photo" src="img/calin-family-v1.svg" alt="Calin with his kids King, Legion, and KJ" width="1024" height="576">
       <div class="top">
-        <!-- PHOTO: replace logo.jpg below with Calin's photo, e.g. img/calin.jpg -->
-        <img class="photo" src="logo.jpg?v=10" alt="Calin Witt">
         <div><h1>Hey, I'm Calin Witt.</h1><p class="tag">Husband, dad, former cop, logistics guy, and AuDHD app builder.</p></div>
       </div>
       <p>I'm a member of the Choctaw Nation of Oklahoma and husband to Erica. I'm dad to King, Legion, and KJ, plus three bonus kids. My three are all neurodivergent, and watching them struggle with how the world works is a big part of why Neuro-Glitch exists.</p>
