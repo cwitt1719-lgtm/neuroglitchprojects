@@ -87,22 +87,59 @@
     footer { color:var(--muted); font-size:14px; padding-bottom:40px; text-align:center; }
     footer a { color:var(--cyan); }
     .credit { margin-top:8px; font-size:13px; letter-spacing:.04em; }
+    .brandlink { display:inline-block; }
+    .burger { position:fixed; top:12px; right:12px; z-index:60; width:48px; height:48px; border-radius:14px; border:1px solid var(--line); background:rgba(18,12,28,.92); display:flex; flex-direction:column; justify-content:center; align-items:center; gap:5px; cursor:pointer; box-shadow:0 0 14px rgba(180,76,255,.35); }
+    .burger span { display:block; width:22px; height:2px; border-radius:2px; background:linear-gradient(90deg,var(--purple),var(--cyan)); transition:transform .2s, opacity .2s; }
+    .burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); } .burger[aria-expanded="true"] span:nth-child(2){ opacity:0; } .burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+    .menu { position:fixed; top:68px; right:12px; z-index:59; min-width:220px; background:#120c1c; border:1px solid var(--line); border-radius:16px; padding:8px; box-shadow:0 10px 40px rgba(0,0,0,.6), 0 0 20px rgba(46,231,255,.15); display:none; }
+    .menu.on { display:block; }
+    .menu a { display:block; color:var(--text); text-decoration:none; font-size:18px; font-weight:600; padding:12px 14px; border-radius:10px; }
+    .menu a:hover, .menu a:focus { background:#1c1230; color:var(--cyan); }
+    .hello { display:grid; gap:16px; padding:8px 0 28px; }
+    .hello .top { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+    .photo { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center; border-radius:18px; border:2px solid transparent; background:linear-gradient(#07060f,#07060f) padding-box, linear-gradient(135deg,var(--purple),var(--cyan),#ff4fd8) border-box; box-shadow:0 0 18px rgba(180,76,255,.45), 0 0 34px rgba(46,231,255,.2), 0 0 50px rgba(255,79,216,.15); }
+    .hello h1 { margin:0; font-size:34px; line-height:1.15; }
+    .tag { margin:6px 0 0; color:var(--cyan); font-weight:700; font-size:16px; }
+    .hello p { margin:0; font-size:17px; }
+    .hi3 { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .hi3 div { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+    .hi3 div:nth-child(1){ border-top:3px solid #ff4fd8; } .hi3 div:nth-child(2){ border-top:3px solid var(--cyan); } .hi3 div:nth-child(3){ border-top:3px solid var(--purple); }
+    .hi3 h3 { margin:0 0 6px; font-size:18px; } .hi3 p { color:var(--muted); font-size:15px; }
+    .cta { display:flex; gap:12px 18px; align-items:center; flex-wrap:wrap; }
+    .cta .buy { font-size:17px; padding:12px 20px; } .cta a:not(.buy) { color:var(--cyan); }
+    .contact { text-align:center; }
+    .contact a { color:var(--cyan); font-weight:600; }
+    footer .copy { margin-top:6px; }
+    .mails { display:grid; gap:10px; margin:12px 0; } .mails div { background:#0c0814; border:1px solid var(--line); border-radius:12px; padding:10px 12px; } .ml { display:block; color:var(--muted); font-size:14px; margin-bottom:2px; } .mails a { word-break:break-all; }
   </style>
 </head>
 <body>
   <header>
-    <img class="brand" src="logo.jpg?v=10" alt="Neuro-Glitch. We are different, not less.">
-    <nav>
-      <a href="#apps">Apps</a>
-      <a href="#origin">Origin Story</a>
-      <a href="#joke">Joke discount</a>
-      <a href="#custom">Custom app</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr">Facebook</a>
-      <a href="mailto:help@neuroglitchprojects.com">Email</a>
-    </nav>
+    <a class="brandlink" href="#about" aria-label="Back to About Me"><img class="brand" src="logo.jpg?v=10" alt="Neuro-Glitch. We are different, not less."></a>
   </header>
+  <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  <nav class="menu" id="menu" aria-label="Site menu">
+    <a href="#apps">Apps</a>
+    <a href="#origin">NG Origin Story</a>
+    <a href="#forms">Forms</a>
+    <a href="#contact">Contact</a>
+  </nav>
   <main>
+    <section class="hello" id="about">
+      <img class="photo" src="img/calin-family-v1.svg" alt="Calin with his kids King, Legion, and KJ" width="1024" height="576">
+      <div class="top">
+        <div><h1>Hey, I'm Calin Witt.</h1><p class="tag">Husband, dad, former cop, logistics guy, and AuDHD app builder.</p></div>
+      </div>
+      <p>I'm a member of the Choctaw Nation of Oklahoma and husband to Erica. I'm dad to King, Legion, and KJ, plus three bonus kids. My three are all neurodivergent, and watching them struggle with how the world works is a big part of why Neuro-Glitch exists.</p>
+      <p>I didn't find out I was AuDHD until my 20s. Nobody around me was surprised except me. I've always been the guy who finds a problem and solves it, sometimes even making a problem just to solve it when I was bored.</p>
+      <div class="hi3">
+        <div><h3>Family</h3><p>Family is my why. I build these apps for my own brain and my kids' future. When I'm not building, I'm probably throwing cornhole, sometimes in tournaments and always against my boys.</p></div>
+        <div><h3>Law Enforcement</h3><p>Law enforcement taught me about people: how to read them, how to stay calm when things go wrong, and how to actually help when someone's having their worst day.</p></div>
+        <div><h3>Logistics</h3><p>As a Dockmaster, I built spreadsheets to keep track of every truck coming in and going out. Turns out that's exactly how my brain works best: build a system once and let it do the remembering. That's every app I make.</p></div>
+      </div>
+      <p>I build apps that help my own brain, and then I share them so nobody has to struggle without the apps they need.</p>
+      <div class="cta"><a class="buy" href="#apps">See the Apps</a><a href="mailto:help@neuroglitchprojects.com">help@neuroglitchprojects.com</a><a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr">Facebook</a></div>
+    </section>
     <h1>Apps I built because my brain needed them.</h1>
     <p class="lede">I&#39;m AuDHD. I kept forgetting bills, chores, and gifts, so I built apps to fix it, and now you can use them too. You pay once, and there&#39;s no monthly fee. Need something different? I&#39;ll build you a custom app.</p>
     <section class="grid" id="apps">
@@ -191,6 +228,7 @@
         <p>Growing up I always knew I was a little different, I just never knew why. I have always been very good at problem-solving (sometimes creating problems just to solve them when I was bored). I discovered in my 20s I was AuDHD, to which no one around me was surprised….but me. I created Neuro-Glitch because I want to be able to help people with cognitive struggles by creating apps that I know help me. Finding a problem and solving it. I am a prior Law-Enforcement Officer as well. I never want anyone to need a tool and not have it so if you are really struggling and need help and one of my tools could help you but you can’t afford it, just let me know and we will work together to figure something out! Thank you all for visiting my site and I am so excited for this journey!</p>
       </details>
     </section>
+    <div id="forms">
     <section class="custom" id="joke">
       <h2>Send a joke, get a discount</h2>
       <p class="note">Send a joke. You get 25% off one product. If it makes me laugh, you get 50% off. I reply by email with the discount. This does not apply to bundles.</p>
@@ -239,6 +277,7 @@
       </form>
       </details>
     </section>
+    </div>
     <section id="faq">
     <h2>Questions</h2>
     <div class="faq">
@@ -254,13 +293,20 @@
     </div>
     <p>Still stuck? <a href="mailto:help@neuroglitchprojects.com">Email me</a>.</p>
     </section>
+    <section class="about contact" id="contact">
+      <h2>Contact</h2>
+      <div class="mails"><div><span class="ml">App help, missing downloads, questions, and forms</span><a href="mailto:help@neuroglitchprojects.com">help@neuroglitchprojects.com</a></div><div><span class="ml">Business, partnerships, and custom app projects</span><a href="mailto:Calin.Witt@neuroglitchprojects.com">Calin.Witt@neuroglitchprojects.com</a></div></div>
+      <p>Follow along on <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr">Facebook</a></p>
+    </section>
   </main>
   <footer>
     <div class="links">
       <a href="https://www.facebook.com/share/1QCXShVWDk/?mibextid=wwXIfr"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.6l.4-3H13v-2c0-.6.4-1 1-1z"/></svg>Facebook</a>
       <a href="mailto:help@neuroglitchprojects.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v12H3V6zm2 2v.5l7 4.2 7-4.2V8H5zm14 8V11l-7 4.2L5 11v5h14z"/></svg>Email me</a>
     </div>
-    <p>Neuro-Glitch Projects · neuroglitchprojects.com</p>
+    <p>App help: <a href="mailto:help@neuroglitchprojects.com">help@neuroglitchprojects.com</a></p>
+    <p>Business: <a href="mailto:Calin.Witt@neuroglitchprojects.com">Calin.Witt@neuroglitchprojects.com</a></p>
+    <p class="copy">© Neuro-Glitch Projects</p>
     <p class="credit">Built with <a href="https://grok.com">Grok</a></p>
   </footer>
   <script>
@@ -293,6 +339,22 @@
           var top=card.getBoundingClientRect().top;
           if(top<off) window.scrollTo({top:window.scrollY+top-off-8,behavior:"smooth"});
         });
+      }); });
+    })();
+  </script>
+  <script>
+    (function(){
+      var b=document.getElementById("burger"), m=document.getElementById("menu");
+      function set(o){ m.classList.toggle("on",o); b.setAttribute("aria-expanded",o?"true":"false"); }
+      b.addEventListener("click",function(e){ e.stopPropagation(); set(!m.classList.contains("on")); });
+      document.addEventListener("click",function(e){ if(m.classList.contains("on") && !m.contains(e.target)) set(false); });
+      document.addEventListener("keydown",function(e){ if(e.key==="Escape") set(false); });
+      m.querySelectorAll("a").forEach(function(a){ a.addEventListener("click",function(e){
+        var t=document.querySelector(a.getAttribute("href")); set(false); if(!t) return; e.preventDefault();
+        document.querySelectorAll("details[open]").forEach(function(d){ d.open=false; });
+        if(t.id==="origin"){ var d=t.querySelector("details"); if(d) d.open=true; }
+        history.replaceState(null,"",a.getAttribute("href"));
+        setTimeout(function(){ t.scrollIntoView({behavior:"smooth",block:"start"}); },30);
       }); });
     })();
   </script>
